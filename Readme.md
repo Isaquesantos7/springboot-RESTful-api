@@ -1,43 +1,89 @@
-Passo a passo para se criar um readme.md
+# API RESTful. 
 
-# Titulo
+## Description.
+RESTful API created with the aim of practicing RESTful standards.
 
-## Descricao
-O que faz o app
-com o que foi construido
-Por que?
+## Installation Instruction.
 
-## Instrução de instalação
+### Requirements.
+* Java 22.
+* Springboot 3.3.0.
 
-### Pre requisitos
-## Node 12
-## java 17
-## Python12.3
+## Instruction for use
+### The REST API to the example app is described below.
 
-```bash
-npm install
+## Get list.
+### Request.
+    `GET /api/products`
+        http://127.0.0.1:8080/api/products
 
-```
+### Response.
+    [
+        {
+            "idProduct": "13818cbb-6685-4356-bf4d-0e8d9009c8f5",
+            "name": "Monito Dell Inspiron",
+            "value": 1366.00,
+            "links": [
+                {
+                    "rel": "self",
+                    "href": "http://127.0.0.1:8080/api/products/13818cbb-6685-4356-bf4d-0e8d9009c8f5"
+                }
+            ]
+        },
+    ]
 
-## Instrução de uso
-```bash
-node ace serve --watch
-```
+## Get a specific product.
+### Request.
+`GET /api/products/id`
+    http://127.0.0.1:8080/api/products/ad009468-dbc4-4944-a3cc-756638dee3ad
 
-1. Abra o localhost:3000
-2. Faça o login
+### Response
+    {
+        "idProduct": "ad009468-dbc4-4944-a3cc-756638dee3ad",
+        "name": "Notebook Sansung Galaxy Book2",
+        "value": 2400.00,
+        "_links": {
+            "Product list": {
+                "href": "http://127.0.0.1:8080/api/products"
+            }
+        }
+    }
 
-## Linceça
-### Permissão para uso comercial
+## Creating a new product.
+### Request.
+    `POST /api/products`
+        http://localhost:8080/api/products
+        {
+            "name": "test",
+            "value": 0.0
+        }
 
-### Uso educacional
+### Response.
+    {
+	    "idProduct": "5bdd1e86-1bdc-41a2-bb2d-b49e3aff3d93",
+	    "name": "teste",
+	    "value": 0.0
+    }
 
-## Contribuição
+## Change a specific product.
+### Request.
+`PUT /api/products/id`
+http://127.0.0.1:8080/api/products/ad009468-dbc4-4944-a3cc-756638dee3ad
 
-## Gitflow
+### Response.
+    {
+        "idProduct": "ad009468-dbc4-4944-a3cc-756638dee3ad",
+        "name": "Notebook Sansung Galaxy Book2",
+        "value": 2400.00
+    }
 
-quais padrões vao seguir para contribuição
+## Delete a specific product.
+### Request.
+`DELETE /api/products/id`
+http://127.0.0.1:8080/api/products/ad009468-dbc4-4944-a3cc-756638dee3ad
 
-## Badges
+### Response.
+    Product was deleted with success!
 
-<img src="{https://img.shields.io/badge/Edx-193A3E?style=for-the-badge&logo=edx&logoColor=white}" />
+## License.
+### Educational use.
