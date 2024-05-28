@@ -37,7 +37,7 @@ RESTful API created with the aim of practicing RESTful standards.
 `GET /api/products/id`
     http://127.0.0.1:8080/api/products/ad009468-dbc4-4944-a3cc-756638dee3ad
 
-### Response
+### Response.
     {
         "idProduct": "ad009468-dbc4-4944-a3cc-756638dee3ad",
         "name": "Notebook Sansung Galaxy Book2",
